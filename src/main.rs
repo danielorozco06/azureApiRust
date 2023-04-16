@@ -9,16 +9,17 @@ use std::fs;
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Read the Azure DevOps PAT from the environment variable
-    let pat = env::var("AZURE_DEVOPS_PAT").expect("Set the AZURE_DEVOPS_PAT environment variable");
     let organization = env::var("AZURE_DEVOPS_ORGANIZATION").expect("Set the AZURE_DEVOPS_ORGANIZATION environment variable");
     let project = env::var("AZURE_DEVOPS_PROJECT").expect("Set the AZURE_DEVOPS_PROJECT environment variable");
     let api_version = env::var("AZURE_DEVOPS_API_VERSION").expect("Set the AZURE_DEVOPS_API_VERSION environment variable");
+    let pat = env::var("AZURE_DEVOPS_PAT").expect("Set the AZURE_DEVOPS_PAT environment variable");
 
     // Build the base URL for the Azure DevOps API
     let base_url = format!(
         "https://{}/{}/_apis/git/repositories?api-version={}",
         organization, project, api_version
     );
+    println!("Base URL: {}", base_url);
 
     // Encode the PAT and create the authorization token
     let token = format!("Basic {}", base64::encode(format!("PAT:{}", pat)));
