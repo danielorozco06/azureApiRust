@@ -20,7 +20,13 @@
         }
       },
       "args": [],
-      "cwd": "${workspaceFolder}"
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "AZURE_DEVOPS_ORGANIZATION": "grupobancolombia.visualstudio.com",
+        "AZURE_DEVOPS_PROJECT": "Vicepresidencia%20Servicios%20de%20Tecnología",
+        "AZURE_DEVOPS_API_VERSION": "6.1-preview.1",
+        "AZURE_DEVOPS_PAT": ""
+      }
     }
   ]
 }
