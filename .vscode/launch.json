@@ -7,34 +7,15 @@
     {
       "type": "lldb",
       "request": "launch",
-      "name": "Debug executable 'test_devops'",
+      "name": "Debug executable 'azureapirust'",
       "cargo": {
         "args": [
           "build",
-          "--bin=test_devops",
-          "--package=test_devops"
+          "--bin=azureapirust",
+          "--package=azureapirust"
         ],
         "filter": {
-          "name": "test_devops",
-          "kind": "bin"
-        }
-      },
-      "args": [],
-      "cwd": "${workspaceFolder}"
-    },
-    {
-      "type": "lldb",
-      "request": "launch",
-      "name": "Debug unit tests in executable 'test_devops'",
-      "cargo": {
-        "args": [
-          "test",
-          "--no-run",
-          "--bin=test_devops",
-          "--package=test_devops"
-        ],
-        "filter": {
-          "name": "test_devops",
+          "name": "azureapirust",
           "kind": "bin"
         }
       },
